@@ -1,3 +1,4 @@
+// run this locally
 // var agent = require('webkit-devtools-agent');
 
 var http = require('http'),
@@ -25,7 +26,7 @@ app.get('/', function(req, res) {
 app.post('/post', function(req, response) {
 
   var options = {
-    host: 'localhost.com',
+    host: '127.0.0.1', // point to a remote server. this is just localhost as an example.
     port: 3003,
     path: req.path,
     headers: req.headers,
