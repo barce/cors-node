@@ -1,3 +1,4 @@
+// run this on a remote server
 // var agent = require('webkit-devtools-agent');
 
 var http = require('http'),
