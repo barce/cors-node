@@ -32,8 +32,6 @@ app.post('/post', function(req, res) {
   console.log(req.body);
   res.send(req.body.stuff, 200);
   res.end();
-  return;
-
 
 });
 

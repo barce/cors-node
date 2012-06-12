@@ -2,6 +2,7 @@
 
 var http = require('http'),
     express = require('express'),
+  qs = require('qs'),
     server;
 
 
@@ -24,7 +25,7 @@ app.get('/', function(req, res) {
 app.post('/post', function(req, response) {
 
   var options = {
-    host: 'l33tcave.com',
+    host: 'localhost.com',
     port: 3003,
     path: req.path,
     headers: req.headers,
@@ -36,7 +37,6 @@ app.post('/post', function(req, response) {
     console.log("6 Got response again: " + res.statusCode);
     res.on('error', function(e) {
       console.log('api failure');
-      airbrake.notify(e);
       response.writeHead(res.statusCode, res.headers);
       response.end(res.body);
 
