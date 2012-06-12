@@ -1,0 +1,2 @@
+try 
+curl -X POST -d 'stuff=fun' http://localhost.com:8080/post
