@@ -25,14 +25,21 @@ app.get('/', function(req, res) {
 
 app.post('/post', function(req, response) {
 
+  var headers = req.headers;
+  headers['host'] = 'www.codebelay.com';
   var options = {
-    host: '127.0.0.1', // point to a remote server. this is just localhost as an example.
-    port: 3003,
-    path: req.path,
-    headers: req.headers,
+    host: 'www.codebelay.com', // point to a remote server. this is just localhost as an example.
+    port: 80,
+    path: req.path + '/',
+    headers: headers,
     method: req.method,
     url: req.url,
   };
+
+  console.log('options');
+  console.log(options);
+  console.log('req.params');
+  console.log(req.params);
   var data = '';
   var api_req = http.request(options, function(res) {
     console.log("6 Got response again: " + res.statusCode);
